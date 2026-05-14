@@ -71,6 +71,7 @@
   position: absolute;
   left: 22px;
   top: 0;
+  bottom: 0;
   width: 1px;
   background: var(--color-ink);
   transform-origin: top;
