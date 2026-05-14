@@ -1,0 +1,107 @@
+.section {
+  position: relative;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  padding: 64px 0 96px;
+}
+
+.header {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-teal);
+  margin-bottom: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.kicker::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: var(--color-teal);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 7vw, 64px);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  max-width: 18ch;
+}
+
+.title em {
+  font-style: normal;
+  color: var(--color-teal);
+}
+
+.legend {
+  margin-top: 16px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(4, 4, 5, 0.6);
+}
+
+.rail {
+  position: relative;
+}
+
+.rail::before {
+  content: "";
+  position: absolute;
+  left: 22px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--color-line);
+}
+
+.progress {
+  position: absolute;
+  left: 22px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--color-ink);
+  transform-origin: top;
+  transform: scaleY(0);
+  will-change: transform;
+}
+
+.entries {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+@media (min-width: 880px) {
+  .section {
+    padding: 96px 0 140px;
+  }
+
+  .rail::before,
+  .progress {
+    left: 50%;
+    transform: translateX(-0.5px) scaleY(0);
+    transform-origin: top;
+  }
+
+  .progress {
+    transform: translateX(-0.5px) scaleY(0);
+  }
+
+  .entries {
+    gap: 120px;
+  }
+}
